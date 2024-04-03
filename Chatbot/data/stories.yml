@@ -1,0 +1,60 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Demander le prix
+  steps:
+    - intent: ask_price
+    - action: utter_ask_price
+
+- story: Demander la couleur
+  steps:
+    - intent: ask_color
+    - action: utter_ask_color
+
+- story: Demander la taille
+  steps:
+    - intent: ask_size
+    - action: utter_ask_size
+
+- story: Demander des détails sur le produit
+  steps:
+    - intent: ask_product
+    - action: utter_ask_product
+
+- story: Demander la disponibilité
+  steps:
+    - intent: ask_availability
+    - action: utter_ask_availability
+
+- story: Demander les options d'expédition
+  steps:
+    - intent: ask_shipping
+    - action: utter_ask_shipping
